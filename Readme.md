@@ -1,62 +1,27 @@
-# Customer Churn Prediction using ANN
+# MNIST Digit Classification using ANN
 
-## Overview
+A basic ANN model for classifying handwritten digits from the MNIST dataset.
 
-This project uses an Artificial Neural Network (ANN) to predict whether a customer is likely to leave a bank based on their demographic and banking information.
+### Dataset
 
-## Dataset
+* 60,000 training and 10,000 test images
+* Image size: 28×28 grayscale
+* 10 classes (0–9)
 
-The project uses the Churn Modelling dataset, which contains customer information such as:
+### Model
 
-- Credit Score
-- Geography
-- Gender
-- Age
-- Tenure
-- Balance
-- Number of Products
-- Has Credit Card
-- Is Active Member
-- Estimated Salary
+```text
+Flatten → Dense(128, ReLU) → Dense(10, Softmax)
+```
 
-The target variable is **Exited**, where:
-- `0` → Customer stayed
-- `1` → Customer exited
+### Technologies
 
-## Technologies Used
+Python, TensorFlow, Keras, NumPy, Matplotlib, Scikit-learn
 
-- Python
-- NumPy
-- Pandas
-- Scikit-learn
-- TensorFlow
-- Keras
-- Matplotlib
+### Loss
 
-## Model
+`sparse_categorical_crossentropy`
 
-An Artificial Neural Network was built using TensorFlow/Keras.
+### Optimizer
 
-The basic architecture consists of:
-
-- Input layer
-- Hidden layer with 3 neurons and sigmoid activation
-- Output layer with 1 neuron and sigmoid activation
-
-## Model Training
-
-The model was trained using:
-
-- Loss function: Binary Cross-Entropy
-- Optimizer: Adam
-- Validation split: 20%
-
-## Evaluation
-
-The trained model was evaluated on the test dataset using classification accuracy.
-
-## Files
-
-- `10_customer_churn_prediction.ipynb` — Jupyter Notebook containing the complete implementation
-- `Churn_Modelling.csv` — Dataset used for the project
-- `README.md` — Project documentation
+`Adam`
